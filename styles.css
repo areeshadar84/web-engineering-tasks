@@ -1,0 +1,460 @@
+/* ---------- Basic setup ---------- */
+
+/* Makes width calculations easier (from the box model lecture) */
+* {
+  box-sizing: border-box;
+}
+
+/* Colours and spacing are stored here so they stay consistent */
+:root {
+  --text: #1f2933;
+  --muted: #52606d;
+  --bg: #fbf8f2;
+  --bg-tint: #efe9dc;
+  --green: #1f4d3a;
+  --green-dark: #153628;
+  --orange: #b8431a;
+  --orange-dark: #8f3213;
+  --border: #cfc7b6;
+
+  --space-s: 8px;
+  --space-m: 16px;
+  --space-l: 32px;
+  --space-xl: 64px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+/* Keeps content centred and not too wide */
+.container {
+  width: min(92%, 1100px);
+  margin-inline: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--green);
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.6rem;
+  margin-bottom: var(--space-m);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: var(--space-m);
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-s);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--space-m);
+}
+
+a {
+  color: var(--orange);
+}
+
+a:hover {
+  color: var(--orange-dark);
+}
+
+/* ---------- Header and navigation ---------- */
+
+.site-header {
+  background-color: var(--green);
+  padding: var(--space-m) 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-m);
+  flex-wrap: wrap;
+}
+
+.brand {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.main-nav {
+  display: flex;
+  gap: var(--space-l);
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: var(--space-s) 0;
+  border-bottom: 2px solid transparent;
+}
+
+.main-nav a:hover {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.section-tint {
+  background-color: var(--bg-tint);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: var(--space-xl) 0;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-l);
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-image {
+  flex: 1;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+}
+
+.hero-lead {
+  font-size: 1.2rem;
+}
+
+.hero-meta {
+  font-weight: bold;
+  color: var(--green);
+}
+
+/* ---------- Buttons ---------- */
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: var(--orange);
+  border: 2px solid var(--orange);
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: #ffffff;
+  background-color: var(--orange-dark);
+  border-color: var(--orange-dark);
+}
+
+.button-light {
+  color: var(--green);
+  background-color: transparent;
+  border-color: var(--green);
+}
+
+.button-light:hover {
+  color: #ffffff;
+  background-color: var(--green);
+  border-color: var(--green);
+}
+
+/* ---------- About section ---------- */
+
+.two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-l);
+  margin-top: var(--space-l);
+}
+
+ul,
+ol {
+  margin-top: 0;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: var(--space-s);
+}
+
+/* Ordered list uses A, B, C instead of 1, 2, 3 */
+.abc-list {
+  list-style-type: upper-alpha;
+}
+
+/* ---------- Cards ---------- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: var(--space-l);
+}
+
+.card {
+  background-color: #ffffff;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: var(--space-l);
+}
+
+.card-info {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* ---------- Table ---------- */
+
+.schedule-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-l);
+  align-items: start;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+caption {
+  text-align: left;
+  font-weight: bold;
+  color: var(--muted);
+  padding-bottom: var(--space-s);
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+}
+
+th {
+  color: #ffffff;
+  background-color: var(--green);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--bg);
+}
+
+/* ---------- Aside note ---------- */
+
+.note {
+  background-color: var(--bg-tint);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: var(--space-l);
+}
+
+.note p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Form ---------- */
+
+.register-form {
+  max-width: 640px;
+  margin-top: var(--space-l);
+  background-color: #ffffff;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: var(--space-l);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-m);
+}
+
+.form-row label {
+  font-weight: bold;
+  margin-bottom: var(--space-s);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text);
+  border: 2px solid var(--border);
+  border-radius: 6px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--green);
+}
+
+fieldset {
+  margin: 0 0 var(--space-m) 0;
+  padding: var(--space-m);
+  border: 2px solid var(--border);
+  border-radius: 6px;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 var(--space-s);
+}
+
+.choice {
+  display: block;
+  margin-bottom: var(--space-s);
+}
+
+.form-buttons {
+  display: flex;
+  gap: var(--space-m);
+  flex-wrap: wrap;
+}
+
+/* ---------- Messages written by JavaScript ---------- */
+
+.hint {
+  margin: var(--space-s) 0 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.countdown {
+  font-weight: bold;
+  color: var(--orange);
+}
+
+.form-message {
+  margin: var(--space-m) 0 0 0;
+  padding: var(--space-m);
+  border: 2px solid var(--border);
+  border-radius: 6px;
+}
+
+.form-message.success {
+  color: var(--green-dark);
+  background-color: #e3efe8;
+  border-color: var(--green);
+}
+
+.form-message.error {
+  color: var(--orange-dark);
+  background-color: #f7e6df;
+  border-color: var(--orange);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background-color: var(--green-dark);
+  color: #ffffff;
+  padding: var(--space-l) 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-m);
+  flex-wrap: wrap;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: #ffffff;
+}
+
+/* ---------- Responsive: tablet and phone ---------- */
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    font-size: 17px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+  }
+
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .main-nav {
+    gap: var(--space-m);
+  }
+
+  .section {
+    padding: var(--space-l) 0;
+  }
+
+  th,
+  td {
+    padding: 8px;
+  }
+}
